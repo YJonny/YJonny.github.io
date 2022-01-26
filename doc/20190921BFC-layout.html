@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>BFC布局 | 不言</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="learning the CSS - BFC布局">
+    <meta name="keywords" content="前端">
+    
+    <link rel="preload" href="/assets/css/0.styles.2120f814.css" as="style"><link rel="preload" href="/assets/js/app.24dc4b1c.js" as="script"><link rel="preload" href="/assets/js/11.e1ad0149.js" as="script"><link rel="preload" href="/assets/js/7.8452d2af.js" as="script"><link rel="prefetch" href="/assets/js/10.aee8493d.js"><link rel="prefetch" href="/assets/js/12.f7df8424.js"><link rel="prefetch" href="/assets/js/13.41d2041a.js"><link rel="prefetch" href="/assets/js/14.f9369434.js"><link rel="prefetch" href="/assets/js/15.b9d846dc.js"><link rel="prefetch" href="/assets/js/16.372b786f.js"><link rel="prefetch" href="/assets/js/17.829d9197.js"><link rel="prefetch" href="/assets/js/18.56385eb9.js"><link rel="prefetch" href="/assets/js/19.34789ec8.js"><link rel="prefetch" href="/assets/js/2.95253e9f.js"><link rel="prefetch" href="/assets/js/20.ea668ff1.js"><link rel="prefetch" href="/assets/js/21.b0aa22de.js"><link rel="prefetch" href="/assets/js/22.f43e7d89.js"><link rel="prefetch" href="/assets/js/23.a7d74e4f.js"><link rel="prefetch" href="/assets/js/24.f833dafd.js"><link rel="prefetch" href="/assets/js/25.0b73f234.js"><link rel="prefetch" href="/assets/js/26.de06eb91.js"><link rel="prefetch" href="/assets/js/27.1801d4f3.js"><link rel="prefetch" href="/assets/js/28.36eb4657.js"><link rel="prefetch" href="/assets/js/29.b70687f2.js"><link rel="prefetch" href="/assets/js/3.c07d5be9.js"><link rel="prefetch" href="/assets/js/30.8af5a491.js"><link rel="prefetch" href="/assets/js/31.8df8182e.js"><link rel="prefetch" href="/assets/js/32.6cb41e0c.js"><link rel="prefetch" href="/assets/js/33.c4485fd6.js"><link rel="prefetch" href="/assets/js/34.b31b2647.js"><link rel="prefetch" href="/assets/js/35.6ad930c0.js"><link rel="prefetch" href="/assets/js/36.071d722c.js"><link rel="prefetch" href="/assets/js/37.8998a8ee.js"><link rel="prefetch" href="/assets/js/38.ed27ae51.js"><link rel="prefetch" href="/assets/js/39.0b41ee17.js"><link rel="prefetch" href="/assets/js/4.c1ddadfc.js"><link rel="prefetch" href="/assets/js/40.a3c20f7d.js"><link rel="prefetch" href="/assets/js/41.85ddc99e.js"><link rel="prefetch" href="/assets/js/42.3bdec470.js"><link rel="prefetch" href="/assets/js/43.cd054d53.js"><link rel="prefetch" href="/assets/js/5.efb63d1a.js"><link rel="prefetch" href="/assets/js/6.49cefbe9.js"><link rel="prefetch" href="/assets/js/8.b8aa89a6.js"><link rel="prefetch" href="/assets/js/9.1bf07fec.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.2120f814.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><section id="global-layout" data-v-98a81704><header class="header" data-v-72e95531 data-v-98a81704><div class="header-navbar" data-v-72e95531><div class="flex-xbc main header-nav" data-v-72e95531><div class="nav-link" data-v-72e95531><a href="/" class="inblock link-logo router-link-active" data-v-72e95531><img data-src="/logo.png" loading="lazy" alt="logo" class="logo-img lazy" data-v-72e95531></a> <nav class="link-list" data-v-72e95531><a href="/" class="list-item router-link-active" data-v-72e95531>主页</a><a href="/posts/" class="list-item" data-v-72e95531>帖子</a><a href="/doc/" class="list-item router-link-active" data-v-72e95531>文章</a><a href="/tag/" class="list-item" data-v-72e95531>标签</a><a href="/category/" class="list-item" data-v-72e95531>分类</a><a href="/about/" class="list-item" data-v-72e95531>关于我</a></nav></div> <div class="search-box" data-v-72e95531><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div></div></div> </header> <!----> <section class="page" data-v-98a81704 data-v-98a81704><section class="info" style="background-image:url(https://picsum.photos/536/354?random&amp;date=2019-09-21);" data-v-238ac83b><article class="main info-content" data-v-9bdab2c6 data-v-238ac83b><div class="content-header" data-v-9bdab2c6><h1 class="header-title" data-v-9bdab2c6>BFC布局</h1></div> <div class="flex-wcc content-tag" data-v-9bdab2c6><div class="inblock tag-list" data-v-9bdab2c6><a href="/category/web前端/" class="tag-text" data-v-9bdab2c6>web前端
+      </a></div> <span class="tag-space" data-v-9bdab2c6>/</span> <div class="inblock tag-list" data-v-9bdab2c6><a href="/tag/css/" class="tag-text" data-v-9bdab2c6>css
+      </a></div></div> <div class="content content__default" data-v-9bdab2c6><p>BFC(Block formatting context)直译为&quot;块级格式化上下文&quot;。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。</p> <p>BFC作用：</p> <ol><li>BFC元素不与浮动元素相重叠（两栏布局）</li> <li>清除内部浮动 （撑开高度）
+<ol><li>原理: 触发父div的BFC属性，使下面的子div都处在父div的同一个BFC区域之内</li></ol></li> <li>分属于不同的BFC时，可以阻止margin重叠</li></ol> <p>如何生成BFC：（脱离文档流）</p> <ol><li>根元素，即HTML元素（最大的一个BFC）</li> <li>float的值不为none</li> <li>position的值为absolute或fixed</li> <li>overflow的值不为visible（默认值。内容不会被修剪，会呈现在元素框之外）</li> <li>display的值为inline-block、table-cell、table-caption</li></ol> <p>BFC布局规则：</p> <ol><li>内部的Box会在垂直方向，一个接一个地放置。</li> <li>属于同一个BFC的两个相邻的Box的margin会发生重叠</li> <li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此, 文字环绕效果，设置float</li> <li>BFC的区域不会与float box重叠。</li> <li>计算BFC的高度，浮动元素也参与计算</li></ol> <div class="language- extra-class"><pre class="language-text"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+  &lt;title&gt;BFC自适应两栏布局&lt;/title&gt;
+  &lt;style&gt;
+    .left {
+      width: 200px;
+      height: 500px;
+      float: left;
+      background: #999;
+    }
+    .main {
+      height: 800px;
+      background: #aaa;
+      overflow: auto;
+      color: #fff;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;main&quot;&gt;
+    &lt;h1&gt;BFC 两栏布局&lt;/h1&gt;
+    &lt;p&gt;
+      左侧块浮动到左边，但是因为是浮动块，右侧块高度一旦超过左侧块后文字就会出现在左侧的下方，因为没有块把它挡住。
+    &lt;/p&gt;
+    &lt;p&gt;解决办法： 让右侧块变为BFC文字就不会横过去。因为BFC元素不与Float元素相重叠。&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div></div> <div class="content-time" data-v-9bdab2c6><time datetime="2019年9月21日" class="time-text" data-v-9bdab2c6>创建时间: 2019年9月21日
+    </time> <time datetime="2022年1月14日" class="time-text" data-v-9bdab2c6>最近更新: 2022年1月14日
+    </time></div></article> <section class="main info-content" style="padding-top:1rem;margin-top:2rem;" data-v-e1610d16 data-v-238ac83b><div style="padding: 0 1rem 0 1rem" data-v-e1610d16><span data-flag-title="Your Article Title" class="leancloud-visitors" data-v-e1610d16><em class="post-meta-item-text" data-v-e1610d16>阅读量： </em> <i class="leancloud-visitors-count" data-v-e1610d16></i></span></div> <h3 style="padding: 1rem 1rem 0 1rem" data-v-e1610d16><a href="javascript:;" data-v-e1610d16></a>
+      评 论：
+  </h3> <div id="vcomments" style="padding: 1rem 1rem 0 1rem" data-v-e1610d16></div></section> <section class="flex-xb main info-nav" data-v-203269c1 data-v-238ac83b><a href="/doc/20190922deepCopy.html" class="flex-xb nav-item" data-v-203269c1><div class="flex-xcc item-img" data-v-203269c1><img data-src="https://picsum.photos/536/354?random&amp;date=2019-09-22" loading="lazy" alt="深拷贝" class="img lazy" data-v-203269c1></div> <article class="flex-ysc item-content" data-v-203269c1><h2 class="content-title" data-v-203269c1>深拷贝</h2> <div class="content" data-v-203269c1><h3 id="深浅拷贝"><a class="header-anchor" href="#深浅拷贝">#</a> 深浅拷贝</h3>
+<p>拷贝为什么要分深浅？</p>
+</div></article></a> <!----></section></section></section> <footer class="footer" data-v-8dceedee data-v-98a81704><nav class="link-list" data-v-8dceedee><a href="https://github.com/ybuyan" target="_blank" rel="noopener noreferrer" class="list-item" data-v-8dceedee>Github</a></nav> <a href="/" class="copyright router-link-active" data-v-8dceedee>不言 © 2022</a></footer></section><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.24dc4b1c.js" defer></script><script src="/assets/js/11.e1ad0149.js" defer></script><script src="/assets/js/7.8452d2af.js" defer></script>
+  </body>
+</html>

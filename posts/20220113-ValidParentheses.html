@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>【每日一题】有效括号 | 不言</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="面试题">
+    <meta name="keywords" content="前端">
+    
+    <link rel="preload" href="/assets/css/0.styles.2120f814.css" as="style"><link rel="preload" href="/assets/js/app.24dc4b1c.js" as="script"><link rel="preload" href="/assets/js/31.8df8182e.js" as="script"><link rel="preload" href="/assets/js/7.8452d2af.js" as="script"><link rel="prefetch" href="/assets/js/10.aee8493d.js"><link rel="prefetch" href="/assets/js/11.e1ad0149.js"><link rel="prefetch" href="/assets/js/12.f7df8424.js"><link rel="prefetch" href="/assets/js/13.41d2041a.js"><link rel="prefetch" href="/assets/js/14.f9369434.js"><link rel="prefetch" href="/assets/js/15.b9d846dc.js"><link rel="prefetch" href="/assets/js/16.372b786f.js"><link rel="prefetch" href="/assets/js/17.829d9197.js"><link rel="prefetch" href="/assets/js/18.56385eb9.js"><link rel="prefetch" href="/assets/js/19.34789ec8.js"><link rel="prefetch" href="/assets/js/2.95253e9f.js"><link rel="prefetch" href="/assets/js/20.ea668ff1.js"><link rel="prefetch" href="/assets/js/21.b0aa22de.js"><link rel="prefetch" href="/assets/js/22.f43e7d89.js"><link rel="prefetch" href="/assets/js/23.a7d74e4f.js"><link rel="prefetch" href="/assets/js/24.f833dafd.js"><link rel="prefetch" href="/assets/js/25.0b73f234.js"><link rel="prefetch" href="/assets/js/26.de06eb91.js"><link rel="prefetch" href="/assets/js/27.1801d4f3.js"><link rel="prefetch" href="/assets/js/28.36eb4657.js"><link rel="prefetch" href="/assets/js/29.b70687f2.js"><link rel="prefetch" href="/assets/js/3.c07d5be9.js"><link rel="prefetch" href="/assets/js/30.8af5a491.js"><link rel="prefetch" href="/assets/js/32.6cb41e0c.js"><link rel="prefetch" href="/assets/js/33.c4485fd6.js"><link rel="prefetch" href="/assets/js/34.b31b2647.js"><link rel="prefetch" href="/assets/js/35.6ad930c0.js"><link rel="prefetch" href="/assets/js/36.071d722c.js"><link rel="prefetch" href="/assets/js/37.8998a8ee.js"><link rel="prefetch" href="/assets/js/38.ed27ae51.js"><link rel="prefetch" href="/assets/js/39.0b41ee17.js"><link rel="prefetch" href="/assets/js/4.c1ddadfc.js"><link rel="prefetch" href="/assets/js/40.a3c20f7d.js"><link rel="prefetch" href="/assets/js/41.85ddc99e.js"><link rel="prefetch" href="/assets/js/42.3bdec470.js"><link rel="prefetch" href="/assets/js/43.cd054d53.js"><link rel="prefetch" href="/assets/js/5.efb63d1a.js"><link rel="prefetch" href="/assets/js/6.49cefbe9.js"><link rel="prefetch" href="/assets/js/8.b8aa89a6.js"><link rel="prefetch" href="/assets/js/9.1bf07fec.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.2120f814.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><section id="global-layout" data-v-98a81704><header class="header" data-v-72e95531 data-v-98a81704><div class="header-navbar" data-v-72e95531><div class="flex-xbc main header-nav" data-v-72e95531><div class="nav-link" data-v-72e95531><a href="/" class="inblock link-logo router-link-active" data-v-72e95531><img data-src="/logo.png" loading="lazy" alt="logo" class="logo-img lazy" data-v-72e95531></a> <nav class="link-list" data-v-72e95531><a href="/" class="list-item router-link-active" data-v-72e95531>主页</a><a href="/posts/" class="list-item router-link-active" data-v-72e95531>帖子</a><a href="/doc/" class="list-item" data-v-72e95531>文章</a><a href="/tag/" class="list-item" data-v-72e95531>标签</a><a href="/category/" class="list-item" data-v-72e95531>分类</a><a href="/about/" class="list-item" data-v-72e95531>关于我</a></nav></div> <div class="search-box" data-v-72e95531><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div></div></div> </header> <!----> <section class="page" data-v-98a81704 data-v-98a81704><section class="info" style="background-image:url(https://picsum.photos/536/354?random&amp;date=2022-01-13);" data-v-238ac83b><article class="main info-content" data-v-9bdab2c6 data-v-238ac83b><div class="content-header" data-v-9bdab2c6><h1 class="header-title" data-v-9bdab2c6>【每日一题】有效括号</h1></div> <div class="flex-wcc content-tag" data-v-9bdab2c6><div class="inblock tag-list" data-v-9bdab2c6><a href="/category/面试题/" class="tag-text" data-v-9bdab2c6>面试题
+      </a></div> <span class="tag-space" data-v-9bdab2c6>/</span> <div class="inblock tag-list" data-v-9bdab2c6><a href="/tag/leetcode/" class="tag-text" data-v-9bdab2c6>leetcode
+      </a></div></div> <div class="content content__default" data-v-9bdab2c6><p>在开始之前，请允许我好好的骂骂自己，你是sb你是sb你是sb你是sb你是sb你是sb你是sb你是sb你是sb你是sb你是sb你是sb你是sb你是sb！</p> <h3 id="题目描述"><a href="#题目描述" class="header-anchor">#</a> 题目描述</h3> <blockquote><p>给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。</p> <p>有效字符串需满足：</p> <p>左括号必须用相同类型的右括号闭合。
+左括号必须以正确的顺序闭合。<br>
+示例 1：</p> <p>输入：s = &quot;()&quot;<br>
+输出：true<br>
+示例 2：</p> <p>输入：s = &quot;()[]{}&quot;
+输出：true</p> <p>示例 3：
+输入：s = &quot;(]&quot;<br>
+输出：false</p> <p>示例 4：<br>
+输入：s = &quot;([)]&quot;<br>
+输出：false</p> <p>示例 5：<br>
+输入：s = &quot;{[]}&quot;<br>
+输出：true</p> <p>提示:<br>
+1 &lt;= s.length &lt;= 104<br>
+s 仅由括号 '()[]{}' 组成</p></blockquote> <p>这是最近遇到的一道面试题，可惜由于紧张没有任何思路，只记得这道题我在leetcode上面刷到过。<br>
+面试完以后赶紧打开了leetcode，果然，这题我当时还做对了的，时间在一年前，真的太蠢了。<br>
+下面是我当时的答案：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+ * @param {string} s
+ * @return {boolean}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">isValid</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">s</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span>length <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">!==</span> <span class="token number">0</span><span class="token punctuation">)</span> 
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> temp <span class="token operator">=</span> s<span class="token punctuation">;</span><span class="token comment">// 每次遍历保留一个字符串的副本，用来判断是否还有有效括号残留</span>
+        s <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'()'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        s <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'[]'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        s <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'{}'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>s <span class="token operator">===</span> temp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>s <span class="token operator">===</span> <span class="token string">''</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><blockquote><p>一个很蠢又很简单的解法，通过有效括号成对出现的原理，循环不断的将有效的括号去除，直到字符串为空或者剩下的字符串不能再找到有效括号为止。</p></blockquote> <p>第二种解法是今天看完题解以后的解法，利用栈的原理。</p> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token comment">/**
+ * @param {string} s
+ * @return {boolean}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">isValid</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">s</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span>length <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> 
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> s<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> temp <span class="token operator">=</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>temp <span class="token operator">===</span> <span class="token string">'('</span> <span class="token operator">||</span> temp <span class="token operator">===</span> <span class="token string">'{'</span> <span class="token operator">||</span> temp <span class="token operator">===</span> <span class="token string">'['</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>
+                <span class="token punctuation">(</span>temp <span class="token operator">===</span> <span class="token string">')'</span> <span class="token operator">&amp;&amp;</span> stack<span class="token punctuation">[</span>stack<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">'('</span><span class="token punctuation">)</span>
+                <span class="token operator">||</span> <span class="token punctuation">(</span>temp <span class="token operator">===</span> <span class="token string">'}'</span> <span class="token operator">&amp;&amp;</span> stack<span class="token punctuation">[</span>stack<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">'{'</span><span class="token punctuation">)</span>
+                <span class="token operator">||</span> <span class="token punctuation">(</span>temp <span class="token operator">===</span> <span class="token string">']'</span> <span class="token operator">&amp;&amp;</span> stack<span class="token punctuation">[</span>stack<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">'['</span><span class="token punctuation">)</span>
+            <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token operator">!</span>stack<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+</code></pre></div><p>个人觉得效果都差不多~~~</p></div> <div class="content-time" data-v-9bdab2c6><time datetime="2022年1月13日" class="time-text" data-v-9bdab2c6>创建时间: 2022年1月13日
+    </time> <time datetime="2022年1月14日" class="time-text" data-v-9bdab2c6>最近更新: 2022年1月14日
+    </time></div></article> <section class="main info-content" style="padding-top:1rem;margin-top:2rem;" data-v-e1610d16 data-v-238ac83b><div style="padding: 0 1rem 0 1rem" data-v-e1610d16><span data-flag-title="Your Article Title" class="leancloud-visitors" data-v-e1610d16><em class="post-meta-item-text" data-v-e1610d16>阅读量： </em> <i class="leancloud-visitors-count" data-v-e1610d16></i></span></div> <h3 style="padding: 1rem 1rem 0 1rem" data-v-e1610d16><a href="javascript:;" data-v-e1610d16></a>
+      评 论：
+  </h3> <div id="vcomments" style="padding: 1rem 1rem 0 1rem" data-v-e1610d16></div></section> <section class="flex-xb main info-nav" data-v-203269c1 data-v-238ac83b><a href="/posts/20220114-deletesOrderedArrayDuplicates.html" class="flex-xb nav-item" data-v-203269c1><div class="flex-xcc item-img" data-v-203269c1><img data-src="https://picsum.photos/536/354?random&amp;date=2022-01-14" loading="lazy" alt="【每日一题】删除有序数组的重复项" class="img lazy" data-v-203269c1></div> <article class="flex-ysc item-content" data-v-203269c1><h2 class="content-title" data-v-203269c1>【每日一题】删除有序数组的重复项</h2> <div class="content" data-v-203269c1><p>给你一个有序数组 nums ，请你<strong>原地</strong>删除重复出现的元素，使每个元素 <strong>只出现一次</strong> ，返回删除后数组的新长度。</p>
+<p>不要使用额外的数组空间，你必须在 <strong>原地 修改输入数组</strong> 并在使用 O(1) 额外空间的条件下完成。</p>
+</div></article></a> <a href="/posts/20210302hot-website-desinger.html" class="flex-xb nav-item" data-v-203269c1><div class="flex-xcc item-img" data-v-203269c1><img data-src="https://picsum.photos/536/354?random&amp;date=2021-03-02" loading="lazy" alt="设计师免费资源网站" class="img lazy" data-v-203269c1></div> <article class="flex-ysc item-content" data-v-203269c1><h2 class="content-title" data-v-203269c1>设计师免费资源网站</h2> <div class="content" data-v-203269c1><p>免费的资源网站，设计师的福利，仅限个人使用过的</p>
+</div></article></a></section></section></section> <footer class="footer" data-v-8dceedee data-v-98a81704><nav class="link-list" data-v-8dceedee><a href="https://github.com/ybuyan" target="_blank" rel="noopener noreferrer" class="list-item" data-v-8dceedee>Github</a></nav> <a href="/" class="copyright router-link-active" data-v-8dceedee>不言 © 2022</a></footer></section><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.24dc4b1c.js" defer></script><script src="/assets/js/31.8df8182e.js" defer></script><script src="/assets/js/7.8452d2af.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CSS垂直居中 | 不言</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="learning the CSS - CSS垂直居中">
+    <meta name="keywords" content="前端">
+    
+    <link rel="preload" href="/assets/css/0.styles.2120f814.css" as="style"><link rel="preload" href="/assets/js/app.24dc4b1c.js" as="script"><link rel="preload" href="/assets/js/21.b0aa22de.js" as="script"><link rel="preload" href="/assets/js/7.8452d2af.js" as="script"><link rel="prefetch" href="/assets/js/10.aee8493d.js"><link rel="prefetch" href="/assets/js/11.e1ad0149.js"><link rel="prefetch" href="/assets/js/12.f7df8424.js"><link rel="prefetch" href="/assets/js/13.41d2041a.js"><link rel="prefetch" href="/assets/js/14.f9369434.js"><link rel="prefetch" href="/assets/js/15.b9d846dc.js"><link rel="prefetch" href="/assets/js/16.372b786f.js"><link rel="prefetch" href="/assets/js/17.829d9197.js"><link rel="prefetch" href="/assets/js/18.56385eb9.js"><link rel="prefetch" href="/assets/js/19.34789ec8.js"><link rel="prefetch" href="/assets/js/2.95253e9f.js"><link rel="prefetch" href="/assets/js/20.ea668ff1.js"><link rel="prefetch" href="/assets/js/22.f43e7d89.js"><link rel="prefetch" href="/assets/js/23.a7d74e4f.js"><link rel="prefetch" href="/assets/js/24.f833dafd.js"><link rel="prefetch" href="/assets/js/25.0b73f234.js"><link rel="prefetch" href="/assets/js/26.de06eb91.js"><link rel="prefetch" href="/assets/js/27.1801d4f3.js"><link rel="prefetch" href="/assets/js/28.36eb4657.js"><link rel="prefetch" href="/assets/js/29.b70687f2.js"><link rel="prefetch" href="/assets/js/3.c07d5be9.js"><link rel="prefetch" href="/assets/js/30.8af5a491.js"><link rel="prefetch" href="/assets/js/31.8df8182e.js"><link rel="prefetch" href="/assets/js/32.6cb41e0c.js"><link rel="prefetch" href="/assets/js/33.c4485fd6.js"><link rel="prefetch" href="/assets/js/34.b31b2647.js"><link rel="prefetch" href="/assets/js/35.6ad930c0.js"><link rel="prefetch" href="/assets/js/36.071d722c.js"><link rel="prefetch" href="/assets/js/37.8998a8ee.js"><link rel="prefetch" href="/assets/js/38.ed27ae51.js"><link rel="prefetch" href="/assets/js/39.0b41ee17.js"><link rel="prefetch" href="/assets/js/4.c1ddadfc.js"><link rel="prefetch" href="/assets/js/40.a3c20f7d.js"><link rel="prefetch" href="/assets/js/41.85ddc99e.js"><link rel="prefetch" href="/assets/js/42.3bdec470.js"><link rel="prefetch" href="/assets/js/43.cd054d53.js"><link rel="prefetch" href="/assets/js/5.efb63d1a.js"><link rel="prefetch" href="/assets/js/6.49cefbe9.js"><link rel="prefetch" href="/assets/js/8.b8aa89a6.js"><link rel="prefetch" href="/assets/js/9.1bf07fec.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.2120f814.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><section id="global-layout" data-v-98a81704><header class="header" data-v-72e95531 data-v-98a81704><div class="header-navbar" data-v-72e95531><div class="flex-xbc main header-nav" data-v-72e95531><div class="nav-link" data-v-72e95531><a href="/" class="inblock link-logo router-link-active" data-v-72e95531><img data-src="/logo.png" loading="lazy" alt="logo" class="logo-img lazy" data-v-72e95531></a> <nav class="link-list" data-v-72e95531><a href="/" class="list-item router-link-active" data-v-72e95531>主页</a><a href="/posts/" class="list-item" data-v-72e95531>帖子</a><a href="/doc/" class="list-item router-link-active" data-v-72e95531>文章</a><a href="/tag/" class="list-item" data-v-72e95531>标签</a><a href="/category/" class="list-item" data-v-72e95531>分类</a><a href="/about/" class="list-item" data-v-72e95531>关于我</a></nav></div> <div class="search-box" data-v-72e95531><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div></div></div> </header> <!----> <section class="page" data-v-98a81704 data-v-98a81704><section class="info" style="background-image:url(https://picsum.photos/536/354?random&amp;date=2019-10-02);" data-v-238ac83b><article class="main info-content" data-v-9bdab2c6 data-v-238ac83b><div class="content-header" data-v-9bdab2c6><h1 class="header-title" data-v-9bdab2c6>CSS垂直居中</h1></div> <div class="flex-wcc content-tag" data-v-9bdab2c6><div class="inblock tag-list" data-v-9bdab2c6><a href="/category/web前端/" class="tag-text" data-v-9bdab2c6>web前端
+      </a></div> <span class="tag-space" data-v-9bdab2c6>/</span> <div class="inblock tag-list" data-v-9bdab2c6><a href="/tag/css/" class="tag-text" data-v-9bdab2c6>css
+      </a></div></div> <div class="content content__default" data-v-9bdab2c6><p>源自《css揭秘》
+在CSS中对元素进行水平居中非常的简单：如果是一个行内元素，就对他的父元素应用'text-align:center',如果是一个块级元素，就对他自身使用'margin:auto',然而对一个元素进行垂直居中就不是那么简单了。</p> <h3 id="以下有几种简单的方法"><a href="#以下有几种简单的方法" class="header-anchor">#</a> 以下有几种简单的方法：</h3> <h4 id="_1、基于绝对定位"><a href="#_1、基于绝对定位" class="header-anchor">#</a> 1、基于绝对定位</h4> <p>此处又区分为固定宽度和高度以及不固定宽度和高度的</p> <p>当宽度与高度固定时</p> <div class="language- extra-class"><pre class="language-text"><code>  &lt;style&gt;
+    .center {
+      width: 18em;
+      height: 10em;
+      text-align: center;
+      background-color: orange;
+      color: #fff;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -9rem;
+      margin-top: -5rem;
+    }
+  &lt;/style&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;center&quot;&gt;
+        要求原生有固定的宽高。&lt;br/&gt;
+        position: absolute;&lt;br/&gt;
+        top和left 为 50%;&lt;br/&gt;
+        margin上为高的一半&lt;br/&gt;
+        margin左为宽的一半&lt;br/&gt;
+    &lt;/div&gt;
+
+  &lt;/body&gt;
+</code></pre></div><p>也可以借助强大的calc()函数,这样还可以省掉两行声明：</p> <div class="language- extra-class"><pre class="language-text"><code>  &lt;style&gt;
+    .center {
+      width: 18em;
+      height: 10em;
+      text-align: center;
+      background-color: orange;
+      color: #fff;
+
+      position: absolute;
+      top: calc(50%-5rem);
+      left: calc(50%-9rem);
+    }
+  &lt;/style&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;center&quot;&gt;
+        要求原生有固定的宽高。&lt;br/&gt;
+        position: absolute;&lt;br/&gt;
+        top和left 为 50%;&lt;br/&gt;
+        margin上为高的一半&lt;br/&gt;
+        margin左为宽的一半&lt;br/&gt;
+    &lt;/div&gt;
+
+  &lt;/body&gt;
+</code></pre></div><p>通常情况下，对于居中的元素的宽高尺寸都是根据内容来决定的，如果能找到一个属性的百分比值以元素自身的宽高作为解析基础，那么难题就可以解决了，translate()变形函数恰到好处的能做到这一点。</p> <div class="language- extra-class"><pre class="language-text"><code>  &lt;style&gt;
+    .center {
+      width: 18em;
+      height: 10em;
+      text-align: center;
+      background-color: orange;
+      color: #fff;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  &lt;/style&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;center&quot;&gt;
+        不要求原生有固定的宽高。&lt;br/&gt;
+        position: absolute;&lt;br/&gt;
+        top和left 为 50%;&lt;br/&gt;
+        transform: translate(-50%, -50%);
+    &lt;/div&gt;
+
+  &lt;/body&gt;
+</code></pre></div><h4 id="_2、基于viewport"><a href="#_2、基于viewport" class="header-anchor">#</a> 2、基于viewport</h4> <p>假设我们不想使用绝对定位，依然可以使用translate()函数将这个元素以其自身的宽高进行移动，但是确实left和top元素，我们应该怎么做到呢？可以使用margin属性的百分比来实现</p> <div class="language- extra-class"><pre class="language-text"><code>   .center {
+     width: 18em;
+     padding: 1em 1.5em;
+     margin: 50vh auto 0;
+     transform: translateY(-50%);
+  }
+</code></pre></div><h4 id="_3、基于flexbox"><a href="#_3、基于flexbox" class="header-anchor">#</a> 3、基于flexbox</h4> <p>毫无疑问这是最佳的解决方法，因为Flexbox是专门针对这类需求所设计的。
+我们只需要写两行声明即可：</p> <ul><li>先给这个待居中的元素的父元素设置display:flex</li> <li>再给这个元素自身设置margin:auto,当我们使用flexbox时margin:auto不仅水平方向上将元素居中，垂直方向上也能做到居中。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>  &lt;style&gt;
+    .wrapper {
+      width: 1000px;
+      height: 600px;
+      background: #999;
+
+      display: flex;
+    }
+    .center {
+      width: 18em;
+      height: 10em;
+      text-align: center;
+      background-color: orange;
+      color: #fff;
+
+      margin: auto;
+    }
+  &lt;/style&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;wrapper&quot;&gt;
+      &lt;div class=&quot;center&quot;&gt;
+        使用flex居中&lt;br/&gt;
+        父元素 display: flex; &lt;br/&gt;
+        居中块： margin: auto;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+</code></pre></div><h3 id="小结"><a href="#小结" class="header-anchor">#</a> 小结</h3> <h4 id="被居中元素宽高固定"><a href="#被居中元素宽高固定" class="header-anchor">#</a> 被居中元素宽高固定</h4> <ol><li>绝对定位，top和left 为 50%， margin的left和top为自身宽高一半</li></ol> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.center</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">margin-left</span><span class="token punctuation">:</span> -9rem<span class="token punctuation">;</span>
+  <span class="token property">margin-top</span><span class="token punctuation">:</span> -5rem<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ol start="2"><li>绝对定位，top和lefe为父元素一半剪自身一半</li></ol> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.center</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>50% - 5em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>50% - 9em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="被居中元素宽高不定"><a href="#被居中元素宽高不定" class="header-anchor">#</a> 被居中元素宽高不定</h4> <ol start="3"><li>使用CSS3 的 <code>transform</code>将位置在中心点平移自身宽高一半</li></ol> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.center</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-50%<span class="token punctuation">,</span> -50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ol start="4"><li>使用flex布局居中</li></ol> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.wrapper</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.center</span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ol start="5"><li>flex布局，父元素指定子元素居中。</li></ol> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.wrapper</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="在浏览器窗口中居中"><a href="#在浏览器窗口中居中" class="header-anchor">#</a> 在浏览器窗口中居中</h4> <p>基于视口的垂直居中。不要求原生有固定的宽高，但是这种居中是在整个页面窗口内居中，不是基于父元素</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.center</span><span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 50vh auto<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>-50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <div class="content-time" data-v-9bdab2c6><time datetime="2019年10月2日" class="time-text" data-v-9bdab2c6>创建时间: 2019年10月2日
+    </time> <time datetime="2022年1月14日" class="time-text" data-v-9bdab2c6>最近更新: 2022年1月14日
+    </time></div></article> <section class="main info-content" style="padding-top:1rem;margin-top:2rem;" data-v-e1610d16 data-v-238ac83b><div style="padding: 0 1rem 0 1rem" data-v-e1610d16><span data-flag-title="Your Article Title" class="leancloud-visitors" data-v-e1610d16><em class="post-meta-item-text" data-v-e1610d16>阅读量： </em> <i class="leancloud-visitors-count" data-v-e1610d16></i></span></div> <h3 style="padding: 1rem 1rem 0 1rem" data-v-e1610d16><a href="javascript:;" data-v-e1610d16></a>
+      评 论：
+  </h3> <div id="vcomments" style="padding: 1rem 1rem 0 1rem" data-v-e1610d16></div></section> <section class="flex-xb main info-nav" data-v-203269c1 data-v-238ac83b><a href="/doc/20191003VUE-Object-defineproperty.html" class="flex-xb nav-item" data-v-203269c1><div class="flex-xcc item-img" data-v-203269c1><img data-src="https://picsum.photos/536/354?random&amp;date=2019-10-03" loading="lazy" alt="Object.defineproperty在vue中的作用" class="img lazy" data-v-203269c1></div> <article class="flex-ysc item-content" data-v-203269c1><h2 class="content-title" data-v-203269c1>Object.defineproperty在vue中的作用</h2> <div class="content" data-v-203269c1><h1 id="神一样的defineproperty"><a class="header-anchor" href="#神一样的defineproperty">#</a> 神一样的defineproperty</h1>
+</div></article></a> <a href="/doc/20190929length-CSS.html" class="flex-xb nav-item" data-v-203269c1><div class="flex-xcc item-img" data-v-203269c1><img data-src="https://picsum.photos/536/354?random&amp;date=2019-09-29" loading="lazy" alt="css中有这么么么多长度单位？" class="img lazy" data-v-203269c1></div> <article class="flex-ysc item-content" data-v-203269c1><h2 class="content-title" data-v-203269c1>css中有这么么么多长度单位？</h2> <div class="content" data-v-203269c1><p>wtf？vmin是什么东西~？</p>
+</div></article></a></section></section></section> <footer class="footer" data-v-8dceedee data-v-98a81704><nav class="link-list" data-v-8dceedee><a href="https://github.com/ybuyan" target="_blank" rel="noopener noreferrer" class="list-item" data-v-8dceedee>Github</a></nav> <a href="/" class="copyright router-link-active" data-v-8dceedee>不言 © 2022</a></footer></section><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.24dc4b1c.js" defer></script><script src="/assets/js/21.b0aa22de.js" defer></script><script src="/assets/js/7.8452d2af.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>loadsh源码 -- difference | 不言</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="loadsh源码学习">
+    <meta name="keywords" content="前端">
+    
+    <link rel="preload" href="/assets/css/0.styles.2120f814.css" as="style"><link rel="preload" href="/assets/js/app.24dc4b1c.js" as="script"><link rel="preload" href="/assets/js/27.1801d4f3.js" as="script"><link rel="preload" href="/assets/js/7.8452d2af.js" as="script"><link rel="prefetch" href="/assets/js/10.aee8493d.js"><link rel="prefetch" href="/assets/js/11.e1ad0149.js"><link rel="prefetch" href="/assets/js/12.f7df8424.js"><link rel="prefetch" href="/assets/js/13.41d2041a.js"><link rel="prefetch" href="/assets/js/14.f9369434.js"><link rel="prefetch" href="/assets/js/15.b9d846dc.js"><link rel="prefetch" href="/assets/js/16.372b786f.js"><link rel="prefetch" href="/assets/js/17.829d9197.js"><link rel="prefetch" href="/assets/js/18.56385eb9.js"><link rel="prefetch" href="/assets/js/19.34789ec8.js"><link rel="prefetch" href="/assets/js/2.95253e9f.js"><link rel="prefetch" href="/assets/js/20.ea668ff1.js"><link rel="prefetch" href="/assets/js/21.b0aa22de.js"><link rel="prefetch" href="/assets/js/22.f43e7d89.js"><link rel="prefetch" href="/assets/js/23.a7d74e4f.js"><link rel="prefetch" href="/assets/js/24.f833dafd.js"><link rel="prefetch" href="/assets/js/25.0b73f234.js"><link rel="prefetch" href="/assets/js/26.de06eb91.js"><link rel="prefetch" href="/assets/js/28.36eb4657.js"><link rel="prefetch" href="/assets/js/29.b70687f2.js"><link rel="prefetch" href="/assets/js/3.c07d5be9.js"><link rel="prefetch" href="/assets/js/30.8af5a491.js"><link rel="prefetch" href="/assets/js/31.8df8182e.js"><link rel="prefetch" href="/assets/js/32.6cb41e0c.js"><link rel="prefetch" href="/assets/js/33.c4485fd6.js"><link rel="prefetch" href="/assets/js/34.b31b2647.js"><link rel="prefetch" href="/assets/js/35.6ad930c0.js"><link rel="prefetch" href="/assets/js/36.071d722c.js"><link rel="prefetch" href="/assets/js/37.8998a8ee.js"><link rel="prefetch" href="/assets/js/38.ed27ae51.js"><link rel="prefetch" href="/assets/js/39.0b41ee17.js"><link rel="prefetch" href="/assets/js/4.c1ddadfc.js"><link rel="prefetch" href="/assets/js/40.a3c20f7d.js"><link rel="prefetch" href="/assets/js/41.85ddc99e.js"><link rel="prefetch" href="/assets/js/42.3bdec470.js"><link rel="prefetch" href="/assets/js/43.cd054d53.js"><link rel="prefetch" href="/assets/js/5.efb63d1a.js"><link rel="prefetch" href="/assets/js/6.49cefbe9.js"><link rel="prefetch" href="/assets/js/8.b8aa89a6.js"><link rel="prefetch" href="/assets/js/9.1bf07fec.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.2120f814.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><section id="global-layout" data-v-98a81704><header class="header" data-v-72e95531 data-v-98a81704><div class="header-navbar" data-v-72e95531><div class="flex-xbc main header-nav" data-v-72e95531><div class="nav-link" data-v-72e95531><a href="/" class="inblock link-logo router-link-active" data-v-72e95531><img data-src="/logo.png" loading="lazy" alt="logo" class="logo-img lazy" data-v-72e95531></a> <nav class="link-list" data-v-72e95531><a href="/" class="list-item router-link-active" data-v-72e95531>主页</a><a href="/posts/" class="list-item" data-v-72e95531>帖子</a><a href="/doc/" class="list-item router-link-active" data-v-72e95531>文章</a><a href="/tag/" class="list-item" data-v-72e95531>标签</a><a href="/category/" class="list-item" data-v-72e95531>分类</a><a href="/about/" class="list-item" data-v-72e95531>关于我</a></nav></div> <div class="search-box" data-v-72e95531><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div></div></div> </header> <!----> <section class="page" data-v-98a81704 data-v-98a81704><section class="info" style="background-image:url(https://picsum.photos/536/354?random&amp;date=2021-04-11);" data-v-238ac83b><article class="main info-content" data-v-9bdab2c6 data-v-238ac83b><div class="content-header" data-v-9bdab2c6><h1 class="header-title" data-v-9bdab2c6>loadsh源码 -- difference</h1></div> <div class="flex-wcc content-tag" data-v-9bdab2c6><div class="inblock tag-list" data-v-9bdab2c6><a href="/category/web前端/" class="tag-text" data-v-9bdab2c6>web前端
+      </a></div> <span class="tag-space" data-v-9bdab2c6>/</span> <div class="inblock tag-list" data-v-9bdab2c6><a href="/tag/js/" class="tag-text" data-v-9bdab2c6>js
+      </a><a href="/tag/源码/" class="tag-text" data-v-9bdab2c6>源码
+      </a><a href="/tag/loadsh/" class="tag-text" data-v-9bdab2c6>loadsh
+      </a><a href="/tag/工具库/" class="tag-text" data-v-9bdab2c6>工具库
+      </a></div></div> <div class="content content__default" data-v-9bdab2c6><p>loadsh真的是对js的运用做到了极致细节。不得不感叹这才是艺术。</p> <h3 id="difference-介绍"><a href="#difference-介绍" class="header-anchor">#</a> difference 介绍</h3> <p>loadsh数组中的一个方法，故而争对的是数组。其方法可以找出两个数组中的不同项。最后返回的值是一个新的数组，不会去改变原数组，所以它不同于loadsh的另一个方法pullall，pullall会改变原数组。</p> <h3 id="源码difference"><a href="#源码difference" class="header-anchor">#</a> 源码difference</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> baseDifference <span class="token keyword">from</span> <span class="token string">'./.internal/baseDifference.js'</span>
+<span class="token keyword">import</span> baseFlatten <span class="token keyword">from</span> <span class="token string">'./.internal/baseFlatten.js'</span>
+<span class="token keyword">import</span> isArrayLikeObject <span class="token keyword">from</span> <span class="token string">'./isArrayLikeObject.js'</span>
+
+<span class="token comment">/**
+ * Creates an array of `array` values not included in the other given arrays
+ * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * for equality comparisons. The order and references of result values are
+ * determined by the first array.
+ *
+ * **Note:** Unlike `pullAll`, this method returns a new array.
+ *
+ * @since 0.1.0
+ * @category Array
+ * @param {Array} array The array to inspect.
+ * @param {...Array} [values] The values to exclude.
+ * @returns {Array} Returns the new array of filtered values.
+ * @see union, unionBy, unionWith, without, xor, xorBy, xorWith,
+ * @example
+ *
+ * difference([2, 1], [2, 3])
+ * // =&gt; [1]
+ */</span>
+<span class="token keyword">function</span> <span class="token function">difference</span><span class="token punctuation">(</span><span class="token parameter">array<span class="token punctuation">,</span> <span class="token operator">...</span>values</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">isArrayLikeObject</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span>
+    <span class="token operator">?</span> <span class="token function">baseDifference</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span> <span class="token function">baseFlatten</span><span class="token punctuation">(</span>values<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> isArrayLikeObject<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>与其他的方法差不多，方法difference将返回一个函数baseDifference(这才是关键代码)。但是在这个方法返回之前回去调用isArrayLikeObject来对参数array做判断，判断是不是数组或者类数组。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// isArrayLikeObject.js</span>
+<span class="token keyword">function</span> <span class="token function">isArrayLikeObject</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">isObjectLike</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">isArrayLike</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// isObjectLike.js</span>
+<span class="token keyword">function</span> <span class="token function">isObjectLike</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">'object'</span> <span class="token operator">&amp;&amp;</span> value <span class="token operator">!==</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// isArrayLike.js</span>
+<span class="token keyword">function</span> <span class="token function">isArrayLike</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> value <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> value <span class="token operator">!==</span> <span class="token string">'function'</span> <span class="token operator">&amp;&amp;</span> <span class="token function">isLength</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>当array满足以上条件时将会返回baseDifference，值得了解的isLength这个方法：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/** Used as references for various `Number` constants. */</span>
+<span class="token keyword">const</span> <span class="token constant">MAX_SAFE_INTEGER</span> <span class="token operator">=</span> <span class="token number">9007199254740991</span>
+
+<span class="token comment">/**
+ * Checks if `value` is a valid array-like length.
+ *
+ * **Note:** This method is loosely based on
+ * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
+ *
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+ * @example
+ *
+ * isLength(3)
+ * // =&gt; true
+ *
+ * isLength(Number.MIN_VALUE)
+ * // =&gt; false
+ *
+ * isLength(Infinity)
+ * // =&gt; false
+ *
+ * isLength('3')
+ * // =&gt; false
+ */</span>
+<span class="token keyword">function</span> <span class="token function">isLength</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">'number'</span> <span class="token operator">&amp;&amp;</span>
+    value <span class="token operator">&gt;</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> value <span class="token operator">%</span> <span class="token number">1</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> value <span class="token operator">&lt;=</span> <span class="token constant">MAX_SAFE_INTEGER</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这个length是大于等于0切小于等于9007199254740991的整数。为什么是9007199254740991？<br>
+因为js中的最大精确数值是2^53-1 = 9007199254740991(真的是极致的细节)。<br>
+接下来我们进入到主题baseDifference.js</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> SetCache <span class="token keyword">from</span> <span class="token string">'./SetCache.js'</span>
+<span class="token keyword">import</span> arrayIncludes <span class="token keyword">from</span> <span class="token string">'./arrayIncludes.js'</span>
+<span class="token keyword">import</span> arrayIncludesWith <span class="token keyword">from</span> <span class="token string">'./arrayIncludesWith.js'</span>
+<span class="token keyword">import</span> map <span class="token keyword">from</span> <span class="token string">'../map.js'</span>
+<span class="token keyword">import</span> cacheHas <span class="token keyword">from</span> <span class="token string">'./cacheHas.js'</span>
+
+<span class="token comment">/** Used as the size to enable large array optimizations. */</span>
+<span class="token keyword">const</span> <span class="token constant">LARGE_ARRAY_SIZE</span> <span class="token operator">=</span> <span class="token number">200</span>
+
+<span class="token comment">/**
+ * The base implementation of methods like `difference` without support
+ * for excluding multiple arrays.
+ *
+ * @private
+ * @param {Array} array The array to inspect. 被检查的数组
+ * @param {Array} values The values to exclude. 被排查的数组
+ * @param {Function} [iteratee] The iteratee invoked per element. 迭代器 -- differenceby
+ * @param {Function} [comparator] The comparator invoked per element. 比较器 -- differencewith
+ * @returns {Array} Returns the new array of filtered values. 返回值，基于第一份参数
+ */</span>
+<span class="token keyword">function</span> <span class="token function">baseDifference</span><span class="token punctuation">(</span><span class="token parameter">array<span class="token punctuation">,</span> values<span class="token punctuation">,</span> iteratee<span class="token punctuation">,</span> comparator</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> includes <span class="token operator">=</span> arrayIncludes
+  <span class="token keyword">let</span> isCommon <span class="token operator">=</span> <span class="token boolean">true</span>
+  <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">const</span> valuesLength <span class="token operator">=</span> values<span class="token punctuation">.</span>length
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>array<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// !0 -- true !!0 -- false</span>
+    <span class="token keyword">return</span> result
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>iteratee<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    values <span class="token operator">=</span> <span class="token function">map</span><span class="token punctuation">(</span>values<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">iteratee</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>comparator<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    includes <span class="token operator">=</span> arrayIncludesWith
+    isCommon <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>values<span class="token punctuation">.</span>length <span class="token operator">&gt;=</span> <span class="token constant">LARGE_ARRAY_SIZE</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    includes <span class="token operator">=</span> cacheHas
+    isCommon <span class="token operator">=</span> <span class="token boolean">false</span>
+    values <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SetCache</span><span class="token punctuation">(</span>values<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 标签语法</span>
+  outer<span class="token operator">:</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> value <span class="token keyword">of</span> array<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> computed <span class="token operator">=</span> iteratee <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">?</span> value <span class="token operator">:</span> <span class="token function">iteratee</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+
+    value <span class="token operator">=</span> <span class="token punctuation">(</span>comparator <span class="token operator">||</span> value <span class="token operator">!==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">?</span> value <span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token comment">// 排除NaN， NaN !== NaN</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>isCommon <span class="token operator">&amp;&amp;</span> computed <span class="token operator">===</span> computed<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> valuesIndex <span class="token operator">=</span> valuesLength
+      <span class="token comment">// 双层循环，找出不同项</span>
+      <span class="token keyword">while</span> <span class="token punctuation">(</span>valuesIndex<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>values<span class="token punctuation">[</span>valuesIndex<span class="token punctuation">]</span> <span class="token operator">===</span> computed<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">continue</span> outer <span class="token comment">// 跳转到外层循环</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">includes</span><span class="token punctuation">(</span>values<span class="token punctuation">,</span> computed<span class="token punctuation">,</span> comparator<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> result
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> baseDifference
+</code></pre></div><p>当iteratee存在时，也可以说是使用differenceby时，会去调用map将数组values的迭代一遍。<br>
+map.js</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+ * Creates an array of values by running each element of `array` thru `iteratee`.
+ * The iteratee is invoked with three arguments: (value, index, array).
+ *
+ * @since 5.0.0
+ * @category Array
+ * @param {Array} array The array to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the new mapped array.
+ * @example
+ *
+ * function square(n) {
+ *   return n * n
+ * }
+ *
+ * map([4, 8], square)
+ * // =&gt; [16, 64]
+ */</span>
+<span class="token keyword">function</span> <span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">array<span class="token punctuation">,</span> iteratee</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+  <span class="token keyword">const</span> length <span class="token operator">=</span> array <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">?</span> <span class="token number">0</span> <span class="token operator">:</span> array<span class="token punctuation">.</span>length
+  <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span>
+
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">++</span>index <span class="token operator">&lt;</span> length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    result<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">iteratee</span><span class="token punctuation">(</span>array<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">,</span> index<span class="token punctuation">,</span> array<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> result
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> map
+</code></pre></div><p>如果iteratee是一个字符串，例如&quot;x&quot;,那么他会把集合中所有的&quot;x&quot;提取出来形成一个新的数组。所以当需要对比两个数组对象的不同时，differenceby(arr1, arr2, 'filed')，这时就会返回两个数组中filed字段不同的那些项。</p></div> <div class="content-time" data-v-9bdab2c6><time datetime="2021年4月11日" class="time-text" data-v-9bdab2c6>创建时间: 2021年4月11日
+    </time> <time datetime="2022年1月14日" class="time-text" data-v-9bdab2c6>最近更新: 2022年1月14日
+    </time></div></article> <section class="main info-content" style="padding-top:1rem;margin-top:2rem;" data-v-e1610d16 data-v-238ac83b><div style="padding: 0 1rem 0 1rem" data-v-e1610d16><span data-flag-title="Your Article Title" class="leancloud-visitors" data-v-e1610d16><em class="post-meta-item-text" data-v-e1610d16>阅读量： </em> <i class="leancloud-visitors-count" data-v-e1610d16></i></span></div> <h3 style="padding: 1rem 1rem 0 1rem" data-v-e1610d16><a href="javascript:;" data-v-e1610d16></a>
+      评 论：
+  </h3> <div id="vcomments" style="padding: 1rem 1rem 0 1rem" data-v-e1610d16></div></section> <section class="flex-xb main info-nav" data-v-203269c1 data-v-238ac83b><a href="/doc/20210722moment-timezone.html" class="flex-xb nav-item" data-v-203269c1><div class="flex-xcc item-img" data-v-203269c1><img data-src="https://picsum.photos/536/354?random&amp;date=2021-07-22" loading="lazy" alt="moment和moment-timezone -- Angular" class="img lazy" data-v-203269c1></div> <article class="flex-ysc item-content" data-v-203269c1><h2 class="content-title" data-v-203269c1>moment和moment-timezone -- Angular</h2> <div class="content" data-v-203269c1><p>偶然间被同事问道如何获取浏览器时间的时区缩写。查阅资料发现原生的js Date对象并没有提供这样的接口，但是万能的开源时代，<a href="https://momentjs.com/" target="_blank" rel="noopener noreferrer">moment<OutboundLink/></a>和<a href="https://momentjs.com/timezone/" target="_blank" rel="noopener noreferrer">moment-timezone<OutboundLink/></a></p>
+</div></article></a> <a href="/doc/20210401loadsh_add.html" class="flex-xb nav-item" data-v-203269c1><div class="flex-xcc item-img" data-v-203269c1><img data-src="https://picsum.photos/536/354?random&amp;date=2021-04-01" loading="lazy" alt="loadsh源码 -- add" class="img lazy" data-v-203269c1></div> <article class="flex-ysc item-content" data-v-203269c1><h2 class="content-title" data-v-203269c1>loadsh源码 -- add</h2> <div class="content" data-v-203269c1><p><font color="red">loadsh</font> 是我们平时用的很多的工具函数库，这篇文章来了解一下 <font color="red">loadsh</font> 中的 <font color="red">add</font> 函数。</p>
+</div></article></a></section></section></section> <footer class="footer" data-v-8dceedee data-v-98a81704><nav class="link-list" data-v-8dceedee><a href="https://github.com/ybuyan" target="_blank" rel="noopener noreferrer" class="list-item" data-v-8dceedee>Github</a></nav> <a href="/" class="copyright router-link-active" data-v-8dceedee>不言 © 2022</a></footer></section><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.24dc4b1c.js" defer></script><script src="/assets/js/27.1801d4f3.js" defer></script><script src="/assets/js/7.8452d2af.js" defer></script>
+  </body>
+</html>

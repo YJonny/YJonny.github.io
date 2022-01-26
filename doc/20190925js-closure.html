@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>javascript-闭包 | 不言</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="learning the js - 闭包">
+    <meta name="keywords" content="前端">
+    
+    <link rel="preload" href="/assets/css/0.styles.2120f814.css" as="style"><link rel="preload" href="/assets/js/app.24dc4b1c.js" as="script"><link rel="preload" href="/assets/js/15.b9d846dc.js" as="script"><link rel="preload" href="/assets/js/7.8452d2af.js" as="script"><link rel="prefetch" href="/assets/js/10.aee8493d.js"><link rel="prefetch" href="/assets/js/11.e1ad0149.js"><link rel="prefetch" href="/assets/js/12.f7df8424.js"><link rel="prefetch" href="/assets/js/13.41d2041a.js"><link rel="prefetch" href="/assets/js/14.f9369434.js"><link rel="prefetch" href="/assets/js/16.372b786f.js"><link rel="prefetch" href="/assets/js/17.829d9197.js"><link rel="prefetch" href="/assets/js/18.56385eb9.js"><link rel="prefetch" href="/assets/js/19.34789ec8.js"><link rel="prefetch" href="/assets/js/2.95253e9f.js"><link rel="prefetch" href="/assets/js/20.ea668ff1.js"><link rel="prefetch" href="/assets/js/21.b0aa22de.js"><link rel="prefetch" href="/assets/js/22.f43e7d89.js"><link rel="prefetch" href="/assets/js/23.a7d74e4f.js"><link rel="prefetch" href="/assets/js/24.f833dafd.js"><link rel="prefetch" href="/assets/js/25.0b73f234.js"><link rel="prefetch" href="/assets/js/26.de06eb91.js"><link rel="prefetch" href="/assets/js/27.1801d4f3.js"><link rel="prefetch" href="/assets/js/28.36eb4657.js"><link rel="prefetch" href="/assets/js/29.b70687f2.js"><link rel="prefetch" href="/assets/js/3.c07d5be9.js"><link rel="prefetch" href="/assets/js/30.8af5a491.js"><link rel="prefetch" href="/assets/js/31.8df8182e.js"><link rel="prefetch" href="/assets/js/32.6cb41e0c.js"><link rel="prefetch" href="/assets/js/33.c4485fd6.js"><link rel="prefetch" href="/assets/js/34.b31b2647.js"><link rel="prefetch" href="/assets/js/35.6ad930c0.js"><link rel="prefetch" href="/assets/js/36.071d722c.js"><link rel="prefetch" href="/assets/js/37.8998a8ee.js"><link rel="prefetch" href="/assets/js/38.ed27ae51.js"><link rel="prefetch" href="/assets/js/39.0b41ee17.js"><link rel="prefetch" href="/assets/js/4.c1ddadfc.js"><link rel="prefetch" href="/assets/js/40.a3c20f7d.js"><link rel="prefetch" href="/assets/js/41.85ddc99e.js"><link rel="prefetch" href="/assets/js/42.3bdec470.js"><link rel="prefetch" href="/assets/js/43.cd054d53.js"><link rel="prefetch" href="/assets/js/5.efb63d1a.js"><link rel="prefetch" href="/assets/js/6.49cefbe9.js"><link rel="prefetch" href="/assets/js/8.b8aa89a6.js"><link rel="prefetch" href="/assets/js/9.1bf07fec.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.2120f814.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><section id="global-layout" data-v-98a81704><header class="header" data-v-72e95531 data-v-98a81704><div class="header-navbar" data-v-72e95531><div class="flex-xbc main header-nav" data-v-72e95531><div class="nav-link" data-v-72e95531><a href="/" class="inblock link-logo router-link-active" data-v-72e95531><img data-src="/logo.png" loading="lazy" alt="logo" class="logo-img lazy" data-v-72e95531></a> <nav class="link-list" data-v-72e95531><a href="/" class="list-item router-link-active" data-v-72e95531>主页</a><a href="/posts/" class="list-item" data-v-72e95531>帖子</a><a href="/doc/" class="list-item router-link-active" data-v-72e95531>文章</a><a href="/tag/" class="list-item" data-v-72e95531>标签</a><a href="/category/" class="list-item" data-v-72e95531>分类</a><a href="/about/" class="list-item" data-v-72e95531>关于我</a></nav></div> <div class="search-box" data-v-72e95531><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div></div></div> </header> <!----> <section class="page" data-v-98a81704 data-v-98a81704><section class="info" style="background-image:url(https://picsum.photos/536/354?random&amp;date=2019-09-25);" data-v-238ac83b><article class="main info-content" data-v-9bdab2c6 data-v-238ac83b><div class="content-header" data-v-9bdab2c6><h1 class="header-title" data-v-9bdab2c6>javascript-闭包</h1></div> <div class="flex-wcc content-tag" data-v-9bdab2c6><div class="inblock tag-list" data-v-9bdab2c6><a href="/category/web前端/" class="tag-text" data-v-9bdab2c6>web前端
+      </a></div> <span class="tag-space" data-v-9bdab2c6>/</span> <div class="inblock tag-list" data-v-9bdab2c6><a href="/tag/js/" class="tag-text" data-v-9bdab2c6>js
+      </a></div></div> <div class="content content__default" data-v-9bdab2c6><p>由于作用域的关系，函数之间不能相互读取变量，父级作用域不能读取子级作用域的变量。这是闭包出现了。</p> <h2 id="闭包"><a href="#闭包" class="header-anchor">#</a> 闭包</h2> <p>闭包就是能够读取其他函数内部变量的函数。内部的函数被保存到外部的时候就会产生闭包。
+在javascript语言中，只有函数内部的子函数才能读取局部变量，因此闭包也可理解成“定义在函数内部的函数”，本质上闭包就是一个桥梁，将函数内外部打通。</p> <h2 id="闭包用处"><a href="#闭包用处" class="header-anchor">#</a> 闭包用处</h2> <ol><li>外部函数读取内部函数变量</li> <li>让变量始终存在于内存中</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">function</span> <span class="token function">demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        count<span class="token operator">++</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> demo<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> counter <span class="token operator">=</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">counter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//1</span>
+<span class="token function">counter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//2</span>
+<span class="token function">counter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//3 可以在外部读取，而且都去后变量没有被删除</span>
+
+<span class="token comment">// 定义普通函数 add</span>
+<span class="token comment">// 在 add 中定义普通函数 demo</span>
+<span class="token comment">// 在 add 中返回 demo</span>
+<span class="token comment">// 执行 add，并把 add 的返回结果赋值给变量 counter</span>
+<span class="token comment">// 执行 counter </span>
+
+<span class="token comment">// 函数add内部的一个函数demo被函数add外部的一个变量counter引用，这就形成了一个闭包</span>
+</code></pre></div><p>闭包面试题： https://juejin.im/post/58f1fa6a44d904006cf25d22#heading-0</p></div> <div class="content-time" data-v-9bdab2c6><time datetime="2019年9月25日" class="time-text" data-v-9bdab2c6>创建时间: 2019年9月25日
+    </time> <time datetime="2022年1月14日" class="time-text" data-v-9bdab2c6>最近更新: 2022年1月14日
+    </time></div></article> <section class="main info-content" style="padding-top:1rem;margin-top:2rem;" data-v-e1610d16 data-v-238ac83b><div style="padding: 0 1rem 0 1rem" data-v-e1610d16><span data-flag-title="Your Article Title" class="leancloud-visitors" data-v-e1610d16><em class="post-meta-item-text" data-v-e1610d16>阅读量： </em> <i class="leancloud-visitors-count" data-v-e1610d16></i></span></div> <h3 style="padding: 1rem 1rem 0 1rem" data-v-e1610d16><a href="javascript:;" data-v-e1610d16></a>
+      评 论：
+  </h3> <div id="vcomments" style="padding: 1rem 1rem 0 1rem" data-v-e1610d16></div></section> <section class="flex-xb main info-nav" data-v-203269c1 data-v-238ac83b><a href="/doc/20190926js-excution-context.html" class="flex-xb nav-item" data-v-203269c1><div class="flex-xcc item-img" data-v-203269c1><img data-src="https://picsum.photos/536/354?random&amp;date=2019-09-26" loading="lazy" alt="js执行期上下文" class="img lazy" data-v-203269c1></div> <article class="flex-ysc item-content" data-v-203269c1><h2 class="content-title" data-v-203269c1>js执行期上下文</h2> <div class="content" data-v-203269c1><p>抽象概念，简而言之js是在执行上下文中运行的。</p>
+</div></article></a> <a href="/doc/20190924layout-shengbei.html" class="flex-xb nav-item" data-v-203269c1><div class="flex-xcc item-img" data-v-203269c1><img data-src="https://picsum.photos/536/354?random&amp;date=2019-09-24" loading="lazy" alt="圣杯布局" class="img lazy" data-v-203269c1></div> <article class="flex-ysc item-content" data-v-203269c1><h2 class="content-title" data-v-203269c1>圣杯布局</h2> <div class="content" data-v-203269c1><h3 id="圣杯布局"><a class="header-anchor" href="#圣杯布局">#</a> 圣杯布局</h3>
+<p>要求：三列布局；中间宽度自适应，两边内容定宽。</p>
+<p>好处：重要的内容放在文档流前面可以优先渲染</p>
+</div></article></a></section></section></section> <footer class="footer" data-v-8dceedee data-v-98a81704><nav class="link-list" data-v-8dceedee><a href="https://github.com/ybuyan" target="_blank" rel="noopener noreferrer" class="list-item" data-v-8dceedee>Github</a></nav> <a href="/" class="copyright router-link-active" data-v-8dceedee>不言 © 2022</a></footer></section><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.24dc4b1c.js" defer></script><script src="/assets/js/15.b9d846dc.js" defer></script><script src="/assets/js/7.8452d2af.js" defer></script>
+  </body>
+</html>
