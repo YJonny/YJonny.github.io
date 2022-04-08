@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>loadsh源码 -- add | 不言</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="favicon.ico">
+    <meta name="description" content="loadsh源码学习">
+    <meta name="keywords" content="前端">
+    
+    <link rel="preload" href="/assets/css/0.styles.43d6137e.css" as="style"><link rel="preload" href="/assets/js/app.bd594059.js" as="script"><link rel="preload" href="/assets/js/26.128817db.js" as="script"><link rel="preload" href="/assets/js/7.8452d2af.js" as="script"><link rel="prefetch" href="/assets/js/10.354173d6.js"><link rel="prefetch" href="/assets/js/11.051db5bd.js"><link rel="prefetch" href="/assets/js/12.7ccd3285.js"><link rel="prefetch" href="/assets/js/13.6ac8929a.js"><link rel="prefetch" href="/assets/js/14.4e19b2c5.js"><link rel="prefetch" href="/assets/js/15.39e43bef.js"><link rel="prefetch" href="/assets/js/16.1c340e9e.js"><link rel="prefetch" href="/assets/js/17.adb28a1d.js"><link rel="prefetch" href="/assets/js/18.19b5a5c0.js"><link rel="prefetch" href="/assets/js/19.de178bc3.js"><link rel="prefetch" href="/assets/js/2.95253e9f.js"><link rel="prefetch" href="/assets/js/20.3c406fff.js"><link rel="prefetch" href="/assets/js/21.5e690986.js"><link rel="prefetch" href="/assets/js/22.211ffde7.js"><link rel="prefetch" href="/assets/js/23.5b02550e.js"><link rel="prefetch" href="/assets/js/24.35eea773.js"><link rel="prefetch" href="/assets/js/25.8ea91856.js"><link rel="prefetch" href="/assets/js/27.a1d69d69.js"><link rel="prefetch" href="/assets/js/28.fee9ce98.js"><link rel="prefetch" href="/assets/js/29.5354e6a3.js"><link rel="prefetch" href="/assets/js/3.61ddf8c7.js"><link rel="prefetch" href="/assets/js/30.3b608b96.js"><link rel="prefetch" href="/assets/js/31.57355d11.js"><link rel="prefetch" href="/assets/js/32.ff561572.js"><link rel="prefetch" href="/assets/js/33.67d0394e.js"><link rel="prefetch" href="/assets/js/34.8bada734.js"><link rel="prefetch" href="/assets/js/35.15ec7f8b.js"><link rel="prefetch" href="/assets/js/36.e8a3d5b9.js"><link rel="prefetch" href="/assets/js/37.74ba8bbb.js"><link rel="prefetch" href="/assets/js/38.b4d90ced.js"><link rel="prefetch" href="/assets/js/39.57419d8c.js"><link rel="prefetch" href="/assets/js/4.c1ddadfc.js"><link rel="prefetch" href="/assets/js/40.176763a5.js"><link rel="prefetch" href="/assets/js/41.735eafe1.js"><link rel="prefetch" href="/assets/js/42.69411040.js"><link rel="prefetch" href="/assets/js/43.fd1c8248.js"><link rel="prefetch" href="/assets/js/44.18f152e3.js"><link rel="prefetch" href="/assets/js/45.c20b7a96.js"><link rel="prefetch" href="/assets/js/46.61583d6d.js"><link rel="prefetch" href="/assets/js/47.6ef0c64e.js"><link rel="prefetch" href="/assets/js/48.bba92040.js"><link rel="prefetch" href="/assets/js/49.c8b89ff0.js"><link rel="prefetch" href="/assets/js/5.efb63d1a.js"><link rel="prefetch" href="/assets/js/50.85c5c902.js"><link rel="prefetch" href="/assets/js/51.4342a696.js"><link rel="prefetch" href="/assets/js/52.790e0e0d.js"><link rel="prefetch" href="/assets/js/53.7f74fbce.js"><link rel="prefetch" href="/assets/js/54.bdd8d123.js"><link rel="prefetch" href="/assets/js/55.7271fe4c.js"><link rel="prefetch" href="/assets/js/56.2f0becb4.js"><link rel="prefetch" href="/assets/js/57.dc8236a4.js"><link rel="prefetch" href="/assets/js/58.f96dd133.js"><link rel="prefetch" href="/assets/js/6.49cefbe9.js"><link rel="prefetch" href="/assets/js/8.b8aa89a6.js"><link rel="prefetch" href="/assets/js/9.3820ccea.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.43d6137e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><section id="global-layout" data-v-98a81704><header class="header" data-v-72e95531 data-v-98a81704><div class="header-navbar" data-v-72e95531><div class="flex-xbc main header-nav" data-v-72e95531><div class="nav-link" data-v-72e95531><a href="/" class="inblock link-logo router-link-active" data-v-72e95531><img data-src="/logo.png" loading="lazy" alt="logo" class="logo-img lazy" data-v-72e95531></a> <nav class="link-list" data-v-72e95531><a href="/" class="list-item router-link-active" data-v-72e95531>主页</a><a href="/posts/" class="list-item" data-v-72e95531>帖子</a><a href="/doc/" class="list-item router-link-active" data-v-72e95531>文章</a><a href="/tag/" class="list-item" data-v-72e95531>标签</a><a href="/category/" class="list-item" data-v-72e95531>分类</a><a href="/about/" class="list-item" data-v-72e95531>关于我</a></nav></div> <div class="search-box" data-v-72e95531><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div></div></div> </header> <!----> <section class="page" data-v-98a81704 data-v-98a81704><section class="info" style="background-image:url(https://picsum.photos/536/354?random&amp;date=2021-04-01);" data-v-238ac83b><article class="main info-content" data-v-9bdab2c6 data-v-238ac83b><div class="content-header" data-v-9bdab2c6><h1 class="header-title" data-v-9bdab2c6>loadsh源码 -- add</h1></div> <div class="flex-wcc content-tag" data-v-9bdab2c6><div class="inblock tag-list" data-v-9bdab2c6><a href="/category/web前端/" class="tag-text" data-v-9bdab2c6>web前端
+      </a></div> <span class="tag-space" data-v-9bdab2c6>/</span> <div class="inblock tag-list" data-v-9bdab2c6><a href="/tag/js/" class="tag-text" data-v-9bdab2c6>js
+      </a><a href="/tag/源码/" class="tag-text" data-v-9bdab2c6>源码
+      </a><a href="/tag/loadsh/" class="tag-text" data-v-9bdab2c6>loadsh
+      </a><a href="/tag/工具库/" class="tag-text" data-v-9bdab2c6>工具库
+      </a></div></div> <div class="content content__default" data-v-9bdab2c6><p><font color="red">loadsh</font> 是我们平时用的很多的工具函数库，这篇文章来了解一下 <font color="red">loadsh</font> 中的 <font color="red">add</font> 函数。</p> <h3 id="add简介"><a href="#add简介" class="header-anchor">#</a> add简介</h3> <blockquote><p>Adds two numbers</p></blockquote> <p>官方源码中给出这样的注解，两个数字的相加。所以我的第一印象是这个函数只争对数字，其实不然，它同样支持字符串的相加。同样可以理解为它支持的是 <font color="red">js</font> 的加法规则。</p> <h3 id="add函数的使用方法"><a href="#add函数的使用方法" class="header-anchor">#</a> add函数的使用方法</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> assert <span class="token keyword">from</span> <span class="token string">'assert'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> add <span class="token keyword">from</span> <span class="token string">'../add.js'</span><span class="token punctuation">;</span>
+
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'add'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should add two numbers'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should not coerce arguments to numbers'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'6'</span><span class="token punctuation">,</span> <span class="token string">'4'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'64'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">,</span> <span class="token string">'y'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'xy'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="函数分析"><a href="#函数分析" class="header-anchor">#</a> 函数分析</h3> <p>add.js</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> createMathOperation <span class="token keyword">from</span> <span class="token string">'./.internal/createMathOperation.js'</span>
+
+<span class="token comment">/**
+ * Adds two numbers.
+ *
+ * @since 3.4.0
+ * @category Math
+ * @param {number} augend The first number in an addition.
+ * @param {number} addend The second number in an addition.
+ * @returns {number} Returns the total.
+ * @example
+ *
+ * add(6, 4)
+ * // =&gt; 10
+ */</span>
+<span class="token keyword">const</span> add <span class="token operator">=</span> <span class="token function">createMathOperation</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">augend<span class="token punctuation">,</span> addend</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> augend <span class="token operator">+</span> addend<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> add
+</code></pre></div><p>可以看出来 <font color="red">add</font> 不是单纯的返回两个参数相加的结果，而是调用了 <font color="red">createMathOperation</font>。<br>
+createMathOperation.js</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> baseToNumber <span class="token keyword">from</span> <span class="token string">'./baseToNumber.js'</span>
+<span class="token keyword">import</span> baseToString <span class="token keyword">from</span> <span class="token string">'./baseToString.js'</span>
+
+<span class="token comment">/**
+ * Creates a function that performs a mathematical operation on two values.
+ *
+ * @private
+ * @param {Function} operator The function to perform the operation.
+ * @param {number} [defaultValue] The value used for `undefined` arguments.
+ * @returns {Function} Returns the new mathematical operation function.
+ */</span>
+<span class="token comment">// (augend, addend) =&gt; augend + addend</span>
+<span class="token keyword">function</span> <span class="token function">createMathOperation</span><span class="token punctuation">(</span><span class="token parameter">operator<span class="token punctuation">,</span> defaultValue</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> other</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">===</span> <span class="token keyword">undefined</span> <span class="token operator">&amp;&amp;</span> other <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> defaultValue
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">!==</span> <span class="token keyword">undefined</span> <span class="token operator">&amp;&amp;</span> other <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> value
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>other <span class="token operator">!==</span> <span class="token keyword">undefined</span> <span class="token operator">&amp;&amp;</span> value <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> other
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">'string'</span> <span class="token operator">||</span> <span class="token keyword">typeof</span> other <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      value <span class="token operator">=</span> <span class="token function">baseToString</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+      other <span class="token operator">=</span> <span class="token function">baseToString</span><span class="token punctuation">(</span>other<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      value <span class="token operator">=</span> <span class="token function">baseToNumber</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+      other <span class="token operator">=</span> <span class="token function">baseToNumber</span><span class="token punctuation">(</span>other<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token function">operator</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> other<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> createMathOperation
+</code></pre></div><p>此处，<font color="red">createMathOperation</font> 接受两个参数，其一 <font color="red">operator</font>, 其二 <font color="red">defaultValue</font>。</p> <blockquote><p>operator: (augend, addend) =&gt; augend + addend<br>
+defaultValue: 0</p></blockquote> <p>然后返回一个匿名函数，匿名函数具有两个参数，其实就是<font color="red">add</font> 中的 <font color="red">augend</font> 和 <font color="red">addend</font>。匿名函数返回 <font color="red">operator</font>, 最后得出两个值相加的值。<br>
+里面的一大堆就是对 <font color="red">operator</font> 的两个参数做处理。<br>
+如果两个参数都是 <font color="red">undefined</font> 那么就返回 <font color="red">defaultValue</font>。<br>
+如果其中一个值是 <font color="red">undefined</font> 而另外一个值不是 <font color="red">undefined</font>，那么就返回不是 <font color="red">undefined</font> 的值。
+当其中一个值是 <font color="red">string</font> 的时候调用 <font color="red">baseToString</font> 将两个值转换为字符串。</p> <p>baseToString.js</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> isSymbol <span class="token keyword">from</span> <span class="token string">'../isSymbol.js'</span>
+
+<span class="token comment">/** Used as references for various `Number` constants. */</span>
+<span class="token keyword">const</span> <span class="token constant">INFINITY</span> <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">/</span> <span class="token number">0</span>
+
+<span class="token comment">/** Used to convert symbols to primitives and strings. */</span>
+<span class="token keyword">const</span> symbolToString <span class="token operator">=</span> <span class="token class-name">Symbol</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString
+
+<span class="token comment">/**
+ * The base implementation of `toString` which doesn't convert nullish
+ * values to empty strings.
+ *
+ * @private
+ * @param {*} value The value to process.
+ * @returns {string} Returns the string.
+ */</span>
+<span class="token keyword">function</span> <span class="token function">baseToString</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Exit early for strings to avoid a performance hit in some environments.</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">return</span> value
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Recursively convert values (susceptible to call stack limits).</span>
+    <span class="token comment">// 如果是数组，将数组转换为字符串</span>
+    <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>value<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>baseToString<span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isSymbol</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 如果是symbol类型，也将其转换为字符串</span>
+    <span class="token keyword">return</span> symbolToString <span class="token operator">?</span> <span class="token function">symbolToString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token string">''</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+  <span class="token comment">// 最后将和-0对比</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>result <span class="token operator">==</span> <span class="token string">'0'</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">/</span> value<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token constant">INFINITY</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token string">'-0'</span> <span class="token operator">:</span> result
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> baseToString
+</code></pre></div><p>baseToNumber.js</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> isSymbol <span class="token keyword">from</span> <span class="token string">'../isSymbol.js'</span>
+
+<span class="token comment">/** Used as references for various `Number` constants. */</span>
+<span class="token keyword">const</span> <span class="token constant">NAN</span> <span class="token operator">=</span> <span class="token number">0</span> <span class="token operator">/</span> <span class="token number">0</span>
+
+<span class="token comment">/**
+ * The base implementation of `toNumber` which doesn't ensure correct
+ * conversions of binary, hexadecimal, or octal string values.
+ *
+ * @private
+ * @param {*} value The value to process.
+ * @returns {number} Returns the number.
+ */</span>
+<span class="token keyword">function</span> <span class="token function">baseToNumber</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">'number'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> value
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isSymbol</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token constant">NAN</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token operator">+</span>value
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> baseToNumber
+</code></pre></div></div> <div class="content-time" data-v-9bdab2c6><time datetime="2021年4月1日" class="time-text" data-v-9bdab2c6>创建时间: 2021年4月1日
+    </time> <time datetime="2022年1月14日" class="time-text" data-v-9bdab2c6>最近更新: 2022年1月14日
+    </time></div></article> <section class="main info-content" style="padding-top:1rem;margin-top:2rem;" data-v-e1610d16 data-v-238ac83b><div style="padding: 0 1rem 0 1rem" data-v-e1610d16><span data-flag-title="Your Article Title" class="leancloud-visitors" data-v-e1610d16><em class="post-meta-item-text" data-v-e1610d16>阅读量： </em> <i class="leancloud-visitors-count" data-v-e1610d16></i></span></div> <h3 style="padding: 1rem 1rem 0 1rem" data-v-e1610d16><a href="javascript:;" data-v-e1610d16></a>
+      评 论：
+  </h3> <div id="vcomments" style="padding: 1rem 1rem 0 1rem" data-v-e1610d16></div></section> <section class="flex-xb main info-nav" data-v-203269c1 data-v-238ac83b><a href="/doc/20210411loadsh_difference.html" class="flex-xb nav-item" data-v-203269c1><div class="flex-xcc item-img" data-v-203269c1><img data-src="https://picsum.photos/536/354?random&amp;date=2021-04-11" loading="lazy" alt="loadsh源码 -- difference" class="img lazy" data-v-203269c1></div> <article class="flex-ysc item-content" data-v-203269c1><h2 class="content-title" data-v-203269c1>loadsh源码 -- difference</h2> <div class="content" data-v-203269c1><p>loadsh真的是对js的运用做到了极致细节。不得不感叹这才是艺术。</p>
+</div></article></a> <a href="/doc/20210317try-finally.html" class="flex-xb nav-item" data-v-203269c1><div class="flex-xcc item-img" data-v-203269c1><img data-src="https://picsum.photos/536/354?random&amp;date=2021-03-17" loading="lazy" alt="try..finally" class="img lazy" data-v-203269c1></div> <article class="flex-ysc item-content" data-v-203269c1><h2 class="content-title" data-v-203269c1>try..finally</h2> <div class="content" data-v-203269c1></div></article></a></section></section></section> <footer class="footer" data-v-8dceedee data-v-98a81704><nav class="link-list" data-v-8dceedee><a href="https://github.com/ybuyan" target="_blank" rel="noopener noreferrer" class="list-item" data-v-8dceedee>Github</a></nav> <a href="/" class="copyright router-link-active" data-v-8dceedee>不言 © 2022</a></footer></section><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.bd594059.js" defer></script><script src="/assets/js/26.128817db.js" defer></script><script src="/assets/js/7.8452d2af.js" defer></script>
+  </body>
+</html>
